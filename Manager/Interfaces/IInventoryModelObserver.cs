@@ -1,9 +1,9 @@
 ﻿namespace LIN.Inventory.Realtime.Manager.Interfaces;
 
 /// <summary>
-/// Interfaz observable de productos.
+/// Interfaz observable de inventario.
 /// </summary>
-public interface IProductModelObserver
+public interface IInventoryModelObserver
 {
 
     /// <summary>

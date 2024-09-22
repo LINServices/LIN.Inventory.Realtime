@@ -3,13 +3,13 @@ using LIN.Inventory.Realtime.Manager.Observers.Abstractions;
 
 namespace LIN.Inventory.Realtime.Manager.Observers;
 
-public class ProductObserver : IProductObserver
+public class InventoryObserver : IInventoryObserver
 {
 
     /// <summary>
     /// Valores.
     /// </summary>
-    private readonly Dictionary<int, List<IProductModelObserver>> Values = [];
+    private readonly Dictionary<int, List<IInventoryModelObserver>> Values = [];
 
 
     /// <summary>
@@ -17,11 +17,11 @@ public class ProductObserver : IProductObserver
     /// </summary>
     /// <param name="inventoryId">Id del inventario.</param>
     /// <param name="observer"></param>
-    public void Add(int inventoryId, IProductModelObserver observer)
+    public void Add(int inventoryId, IInventoryModelObserver observer)
     {
 
         // Si existe la lista.
-        if (!Values.TryGetValue(inventoryId, out List<IProductModelObserver>? products))
+        if (!Values.TryGetValue(inventoryId, out List<IInventoryModelObserver>? products))
         {
             // Nueva lista.
             products = [];
@@ -44,7 +44,7 @@ public class ProductObserver : IProductObserver
     {
 
         // Recorrer los valores.
-        if (Values.TryGetValue(id, out List<IProductModelObserver>? products))
+        if (Values.TryGetValue(id, out List<IInventoryModelObserver>? products))
             foreach (var product in products)
                 product.Render();
 
@@ -55,7 +55,7 @@ public class ProductObserver : IProductObserver
     /// Remover observable.
     /// </summary>
     /// <param name="product">Observable.</param>
-    public void Remove(IProductModelObserver product)
+    public void Remove(IInventoryModelObserver product)
     {
         // Obtener elemento.
         var items = Values.FirstOrDefault(t => t.Value.Contains(product));

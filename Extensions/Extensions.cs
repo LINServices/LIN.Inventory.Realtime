@@ -22,7 +22,7 @@ public static class ExtensionsRealtime
         services.AddSingleton<IInflowObserver, InflowObserver>();
         services.AddSingleton<INotificationObserver, NotificationObserver>();
         services.AddSingleton<IOutflowObserver, OutflowObserver>();
-        services.AddSingleton<IProductObserver, ProductObserver>();
+        services.AddSingleton<IInventoryObserver, InventoryObserver>();
 
         return services;
     }
