@@ -1,4 +1,6 @@
 ﻿using LIN.Inventory.Realtime.Manager;
+using LIN.Inventory.Realtime.Manager.Observers;
+using LIN.Inventory.Realtime.Manager.Observers.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 using SILF.Script.Interfaces;
 
@@ -14,6 +16,14 @@ public static class ExtensionsRealtime
     {
         services.AddSingleton<IDevice, Device>();
         services.AddSingleton<IDeviceManager, DeviceManager>();
+        services.AddSingleton<IInventoryManager, InventoryManager>();
+
+        // Observadores.
+        services.AddSingleton<IInflowObserver, InflowObserver>();
+        services.AddSingleton<INotificationObserver, NotificationObserver>();
+        services.AddSingleton<IOutflowObserver, OutflowObserver>();
+        services.AddSingleton<IProductObserver, ProductObserver>();
+
         return services;
     }
 

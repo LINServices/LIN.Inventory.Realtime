@@ -8,7 +8,6 @@ namespace LIN.Inventory.Realtime.Script;
 
 public class SILFFunction(Action<List<ParameterValue>> action) : IFunction
 {
-
     public Tipo? Type { get; set; }
     public string Name { get; set; } = string.Empty;
     public List<Parameter> Parameters { get; set; } = [];
