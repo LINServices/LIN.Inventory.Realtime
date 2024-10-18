@@ -13,7 +13,7 @@ public class SILFFunction(Action<List<ParameterValue>> action) : IFunction
     public List<Parameter> Parameters { get; set; } = [];
     public Context Context { get; set; } = null!;
 
-    readonly Action<List<ParameterValue>> Action = action;
+    private readonly Action<List<ParameterValue>> Action = action;
 
     public FuncContext Run(Instance instance, List<ParameterValue> values, ObjectContext @object)
     {

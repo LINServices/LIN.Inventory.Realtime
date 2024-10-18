@@ -7,12 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+    <PackageReference Include="LIN.Access.Auth" Version="1.2.0" />
+    <PackageReference Include="LIN.Access.Inventory" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
     <PackageReference Include="SILF.Script" Version="1.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\AccesoAPI\LIN.Access.Inventory\LIN.Access.Inventory.csproj" />
   </ItemGroup>
 
 </Project>
