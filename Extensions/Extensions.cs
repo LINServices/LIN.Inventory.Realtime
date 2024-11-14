@@ -31,7 +31,7 @@ public static class ExtensionsRealtime
     /// <summary>
     /// Usar tiempo real.
     /// </summary>
-    public static IServiceProvider UseRealTime(this IServiceProvider services, string name, string platform, List<IFunction> actions)
+    public static IServiceProvider UseRealTime(this IServiceProvider services, string name, string platform, List<IFunction> actions, List<Delegate> delegates)
     {
 
         // Obtener servicios.
@@ -48,6 +48,7 @@ public static class ExtensionsRealtime
         if (deviceManager is DeviceManager manager)
         {
             manager.Actions = actions;
+            manager.Delegates = delegates;
         }
 
         return services;

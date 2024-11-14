@@ -18,6 +18,9 @@ public class DeviceManager(IDevice device) : IDeviceManager
     public List<IFunction> Actions { get; set; } = [];
 
 
+    public List<Delegate> Delegates { get; set; } = [];
+
+
     /// <summary>
     /// Iniciar la sesión de Realtime
     /// </summary>
@@ -63,6 +66,7 @@ public class DeviceManager(IDevice device) : IDeviceManager
 
         // Agregar funciones del framework de Inventory.
         app.AddDefaultFunctions(Actions);
+        app.AddBridget([.. Delegates]);
 
         // Ejecutar app.
         app.Run();
