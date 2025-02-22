@@ -19,14 +19,14 @@ public class InventoryManager : IInventoryManager
     {
 
         // Buscar el contexto.
-        _contextList.TryGetValue(model.ID, out Models.InventoryContext? context);
+        _contextList.TryGetValue(model.Id, out Models.InventoryContext? context);
 
         // Validar.
         if (context is not null)
             return;
 
         // Agregar el contexto.
-        _contextList.Add(model.ID, new Models.InventoryContext
+        _contextList.Add(model.Id, new Models.InventoryContext
         {
             Inventory = model
         });
@@ -39,7 +39,7 @@ public class InventoryManager : IInventoryManager
     public void PostAndReplace(InventoryDataModel model)
     {
         // Buscar el contexto.
-        _contextList.TryGetValue(model.ID, out Models.InventoryContext? res);
+        _contextList.TryGetValue(model.Id, out Models.InventoryContext? res);
 
         if (res is not null)
         {
@@ -47,7 +47,7 @@ public class InventoryManager : IInventoryManager
             return;
         }
 
-        _contextList.Add(model.ID, new()
+        _contextList.Add(model.Id, new()
         {
             Inventory = model
         });
@@ -94,7 +94,7 @@ public class InventoryManager : IInventoryManager
     {
         // Obtener el Contexto.
         var inventoryContext = (from context in _contextList
-                                where (context.Value.Inflows ?? new()).Models.Any(t => t.ID == id)
+                                where (context.Value.Inflows ?? new()).Models.Any(t => t.Id == id)
                                 select context.Value).FirstOrDefault();
         return inventoryContext;
     }
@@ -108,7 +108,7 @@ public class InventoryManager : IInventoryManager
     {
         // Obtener el Contexto.
         var inventoryContext = (from context in _contextList
-                                where (context.Value.Outflows ?? new()).Models.Any(t => t.ID == id)
+                                where (context.Value.Outflows ?? new()).Models.Any(t => t.Id == id)
                                 select context.Value).FirstOrDefault();
         return inventoryContext;
     }
