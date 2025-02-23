@@ -9,12 +9,14 @@ namespace LIN.Inventory.Realtime.Extensions;
 public static class ExtensionsRealtime
 {
 
+    private static IDevice _device = new Device();
+
     /// <summary>
     /// Agregar servicios de tiempo real.
     /// </summary>
     public static IServiceCollection AddRealTime(this IServiceCollection services)
     {
-        services.AddSingleton<IDevice, Device>();
+        services.AddSingleton<IDevice>(t => _device);
         services.AddSingleton<IDeviceManager, DeviceManager>();
         services.AddSingleton<IInventoryManager, InventoryManager>();
 
@@ -42,6 +44,7 @@ public static class ExtensionsRealtime
         if (deviceService is not null)
         {
             deviceService.Name = name;
+            deviceService.Platform = platform;
         }
 
         // Validar.
