@@ -1,4 +1,5 @@
-﻿using LIN.Types.Inventory.Models;
+﻿using LIN.Types.Cloud.Identity.Models;
+using LIN.Types.Inventory.Models;
 using LIN.Types.Responses;
 
 namespace LIN.Inventory.Realtime.Manager.Models;
