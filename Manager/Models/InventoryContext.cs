@@ -1,4 +1,5 @@
 ﻿using LIN.Types.Inventory.Models;
+using LIN.Types.Payments.Models;
 using LIN.Types.Responses;
 
 namespace LIN.Inventory.Realtime.Manager.Models;
@@ -25,6 +26,11 @@ public class InventoryContext
     /// Salidas.
     /// </summary>
     public ReadAllResponse<OutflowDataModel>? Outflows { get; set; } = null;
+
+    /// <summary>
+    /// Pagos.
+    /// </summary>
+    public ReadAllResponse<PayModel>? Payments { get; set; } = null;
 
     /// <summary>
     /// Encontrar un producto por Id.

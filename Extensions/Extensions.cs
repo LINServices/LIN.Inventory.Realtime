@@ -9,7 +9,7 @@ namespace LIN.Inventory.Realtime.Extensions;
 public static class ExtensionsRealtime
 {
 
-    private static IDevice _device = new Device();
+    private static readonly IDevice _device = new Device();
 
     /// <summary>
     /// Agregar servicios de tiempo real.
