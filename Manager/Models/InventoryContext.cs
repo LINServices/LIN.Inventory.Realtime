@@ -1,5 +1,4 @@
-﻿using LIN.Types.Cloud.Identity.Models;
-using LIN.Types.Inventory.Models;
+﻿using LIN.Types.Inventory.Models;
 using LIN.Types.Responses;
 
 namespace LIN.Inventory.Realtime.Manager.Models;
@@ -12,24 +11,20 @@ public class InventoryContext
     /// </summary>
     public InventoryDataModel? Inventory { get; set; }
 
-
     /// <summary>
     /// Productos.
     /// </summary>
     public ReadAllResponse<ProductModel>? Products { get; set; } = null;
-
 
     /// <summary>
     /// Entradas.
     /// </summary>
     public ReadAllResponse<InflowDataModel>? Inflows { get; set; } = null;
 
-
     /// <summary>
     /// Salidas.
     /// </summary>
     public ReadAllResponse<OutflowDataModel>? Outflows { get; set; } = null;
-
 
     /// <summary>
     /// Encontrar un producto por Id.
