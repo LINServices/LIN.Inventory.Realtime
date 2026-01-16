@@ -1,15 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="LIN.Access.Auth" Version="2025.9.21" />
-    <PackageReference Include="LIN.Access.Inventory" Version="2025.11.5" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.10" />
+    <PackageReference Include="LIN.Access.Auth" Version="2026.1.10" />
+    <PackageReference Include="LIN.Access.Inventory" Version="2026.1.10" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.2" />
     <PackageReference Include="SILF.Script" Version="13.3.0" />
   </ItemGroup>
 
